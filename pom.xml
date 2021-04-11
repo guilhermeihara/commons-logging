@@ -29,12 +29,6 @@ under the License.
     <version>52</version>
   </parent>
 
-  <properties>
-    <sonar.projectKey>guilhermeihara_commons-logging</sonar.projectKey>
-    <sonar.organization>guilhermeihara</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  </properties>
-
   <modelVersion>4.0.0</modelVersion>
   <groupId>commons-logging</groupId>
   <artifactId>commons-logging</artifactId>
@@ -567,6 +561,10 @@ under the License.
   </distributionManagement>
 
   <properties>
+    <sonar.projectKey>guilhermeihara_commons-logging</sonar.projectKey>
+    <sonar.organization>guilhermeihara</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
     <animal-sniffer.signature>java16</animal-sniffer.signature>
     <commons.logging.javaversion>1.6</commons.logging.javaversion>
     <maven.compiler.source>${commons.logging.javaversion}</maven.compiler.source>
