@@ -402,7 +402,7 @@ under the License.
                   <commons-logging>target/${project.build.finalName}.jar</commons-logging>
                   <commons-logging-api>target/${project.artifactId}-${project.version}-api.jar</commons-logging-api>
                   <commons-logging-adapters>target/${project.artifactId}-${project.version}-adapters.jar</commons-logging-adapters>
-                  <testclasses>target/commons-logging-tests.jar</testclasses>
+                  <testclasses>target/${project.artifactId}-${project.version}-tests.jar</testclasses>
               </systemPropertyVariables>
             </configuration>
           </execution>
