@@ -23,6 +23,12 @@ under the License.
     - "test" phase. Please run "mvn integration-test" to run the full suite of
     - available unit tests.
     -->
+  <parent>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-parent</artifactId>
+    <version>52</version>
+  </parent>
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>commons-logging</groupId>
   <artifactId>commons-logging</artifactId>
@@ -210,7 +216,7 @@ under the License.
               <goal>jar</goal>
             </goals>
             <configuration>
-              <jarName>${project.artifactId}-api-${project.version}</jarName>
+              <jarName>${project.artifactId}-${project.version}-api</jarName>
               <classifier>api</classifier>
               <includes>
                 <include>org/apache/commons/logging/*.class</include>
@@ -314,12 +320,12 @@ under the License.
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>${project.build.directory}/${project.artifactId}-adapters-${project.version}.jar</file>
+                  <file>${project.build.directory}/${project.artifactId}-${project.version}-adapters.jar</file>
                   <type>jar</type>
                   <classifier>adapters</classifier>
                 </artifact>
                 <artifact>
-                  <file>${project.build.directory}/${project.artifactId}-api-${project.version}.jar</file>
+                  <file>${project.build.directory}/${project.artifactId}-${project.version}-api.jar</file>
                   <type>jar</type>
                   <classifier>api</classifier>
                 </artifact>
@@ -340,10 +346,8 @@ under the License.
           -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        
         <configuration>
           <skip>true</skip>
-          <skipTests>true</skipTests>
         </configuration>
       </plugin>
 
@@ -396,8 +400,8 @@ under the License.
                   <logkit>${logkit:logkit:jar}</logkit>
                   <servlet-api>${javax.servlet:servlet-api:jar}</servlet-api>
                   <commons-logging>target/${project.build.finalName}.jar</commons-logging>
-                  <commons-logging-api>target/${project.artifactId}-api-${project.version}.jar</commons-logging-api>
-                  <commons-logging-adapters>target/${project.artifactId}-adapters-${project.version}.jar</commons-logging-adapters>
+                  <commons-logging-api>target/${project.artifactId}-${project.version}-api.jar</commons-logging-api>
+                  <commons-logging-adapters>target/${project.artifactId}-${project.version}-adapters.jar</commons-logging-adapters>
                   <testclasses>target/commons-logging-tests.jar</testclasses>
               </systemPropertyVariables>
             </configuration>
@@ -423,11 +427,11 @@ under the License.
         <artifactId>maven-dependency-plugin</artifactId>
         <version>3.1.2</version>
         <executions>
-<!--           <execution> -->
-<!--             <goals> -->
-<!--               <goal>properties</goal> -->
-<!--             </goals> -->
-<!--           </execution> -->
+          <execution>
+            <goals>
+              <goal>properties</goal>
+            </goals>
+          </execution>
         </executions>
       </plugin>
 
@@ -557,10 +561,6 @@ under the License.
   </distributionManagement>
 
   <properties>
-    <sonar.projectKey>guilhermeihara_commons-logging</sonar.projectKey>
-    <sonar.organization>guilhermeihara</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-
     <animal-sniffer.signature>java16</animal-sniffer.signature>
     <commons.logging.javaversion>1.6</commons.logging.javaversion>
     <maven.compiler.source>${commons.logging.javaversion}</maven.compiler.source>
