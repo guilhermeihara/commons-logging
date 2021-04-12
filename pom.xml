@@ -561,13 +561,10 @@ under the License.
   </distributionManagement>
 
   <properties>
-
-    <properties>
-      <sonar.projectKey>guilhermeihara_commons-logging</sonar.projectKey>
-      <sonar.organization>guilhermeihara</sonar.organization>
-      <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    </properties>
-
+    <sonar.projectKey>guilhermeihara_commons-logging</sonar.projectKey>
+    <sonar.organization>guilhermeihara</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  
     <animal-sniffer.signature>java16</animal-sniffer.signature>
     <commons.logging.javaversion>1.6</commons.logging.javaversion>
     <maven.compiler.source>${commons.logging.javaversion}</maven.compiler.source>
